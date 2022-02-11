@@ -13,5 +13,6 @@ ARで角砂糖を表示する
 追記＋どこかの名前を変更しないといけないみたいです。詳しくはエラーみて
 
 # Google slide中間発表リンク
+https://docs.google.com/presentation/d/1QfDJ03TnvfuFr0kDnTPVnQPF4V5HIGwvchfTP6RDDMk/edit#slide=id.g11360d59621_11_0
 
 # Notionリンク
