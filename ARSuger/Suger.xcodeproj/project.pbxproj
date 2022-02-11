@@ -16,6 +16,7 @@
 		262B81882636AD1D0011BE77 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B81872636AD1D0011BE77 /* MenuTableViewController.swift */; };
 		262B818D2636AD700011BE77 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B818C2636AD700011BE77 /* MenuData.swift */; };
 		262B81942636AFEF0011BE77 /* Ship.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262B81932636AFEF0011BE77 /* Ship.storyboard */; };
+		698E5DE427B5E84F0098E901 /* YOLOv3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 698E5DE327B5E84F0098E901 /* YOLOv3Int8LUT.mlmodel */; };
 		B35F387927A10AA000794B18 /* Kaku.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B35F387827A10AA000794B18 /* Kaku.mlmodel */; };
 		B35F387B27A1134900794B18 /* KakuAndOther.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B35F387A27A1134900794B18 /* KakuAndOther.mlmodel */; };
 		B35F387D27A1148B00794B18 /* KakuAndOtherAug.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B35F387C27A1148B00794B18 /* KakuAndOtherAug.mlmodel */; };
@@ -40,6 +41,7 @@
 		262B81872636AD1D0011BE77 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		262B818C2636AD700011BE77 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		262B81932636AFEF0011BE77 /* Ship.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ship.storyboard; sourceTree = "<group>"; };
+		698E5DE327B5E84F0098E901 /* YOLOv3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3Int8LUT.mlmodel; path = ../../../../../../Downloads/YOLOv3Int8LUT.mlmodel; sourceTree = "<group>"; };
 		B35F387827A10AA000794B18 /* Kaku.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Kaku.mlmodel; sourceTree = "<group>"; };
 		B35F387A27A1134900794B18 /* KakuAndOther.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KakuAndOther.mlmodel; sourceTree = "<group>"; };
 		B35F387C27A1148B00794B18 /* KakuAndOtherAug.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KakuAndOtherAug.mlmodel; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		CF025101263AB452003790E8 /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				698E5DE327B5E84F0098E901 /* YOLOv3Int8LUT.mlmodel */,
 				B35F387827A10AA000794B18 /* Kaku.mlmodel */,
 				B35F387E27A1171200794B18 /* KakuAug.mlmodel */,
 				B35F387C27A1148B00794B18 /* KakuAndOtherAug.mlmodel */,
@@ -230,6 +233,7 @@
 				262B81562636AB7B0011BE77 /* ShipViewController.swift in Sources */,
 				262B81522636AB7B0011BE77 /* AppDelegate.swift in Sources */,
 				CF025108263AB497003790E8 /* CoreMLTestViewController.swift in Sources */,
+				698E5DE427B5E84F0098E901 /* YOLOv3Int8LUT.mlmodel in Sources */,
 				CF02511A263B091B003790E8 /* ARWorldMapViewController.swift in Sources */,
 				262B81882636AD1D0011BE77 /* MenuTableViewController.swift in Sources */,
 			);

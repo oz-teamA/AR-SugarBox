@@ -38,7 +38,19 @@ class CoreMLTestViewController: UIViewController, ARSCNViewDelegate {
         sceneView.autoenablesDefaultLighting = true
         sceneView.automaticallyUpdatesLighting = false
         
-        guard let model = try? VNCoreMLModel(for: KakuAug().model) else {
+//        guard let modelic = try? VNCoreMLModel(for: KakuAug().model) else {
+//            fatalError()
+//        }
+//        let requestic = VNCoreMLRequest(model: modelic, completionHandler: { (request, error) in
+//            //帰ってきた結果がrequest.resultsに格納されている
+//           DispatchQueue.main.async(execute: {
+//               if let results = request.results {
+//                    self.RequestResults(results)
+//               }
+//           })
+//       })
+        
+        guard let model = try? VNCoreMLModel(for: YOLOv3Int8LUT().model) else {
             fatalError()
         }
         let request = VNCoreMLRequest(model: model, completionHandler: { (request, error) in
@@ -104,7 +116,7 @@ class CoreMLTestViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    //配置メソッド
+    //MRAK: - 配置メソッド addObject
     func addObject(hitTestResult: ARHitTestResult, num: Int) -> SCNNode {
         let object_name = select_object
         // アセットより、シーンを作成
@@ -133,7 +145,8 @@ class CoreMLTestViewController: UIViewController, ARSCNViewDelegate {
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         detectionOverlay.sublayers = nil
         
-        var topValue:Float = Float(-100);
+        var topValue:Float = Float(-100)
+        var detect:Bool = false
         
         for observation in results where observation is VNClassificationObservation {
             guard let objectObservation = observation as? VNClassificationObservation else {
@@ -144,7 +157,7 @@ class CoreMLTestViewController: UIViewController, ARSCNViewDelegate {
 //            print(objectObservation.confidence)
             
             if(topValue < objectObservation.confidence){
-                topValue = objectObservation.confidence
+                topValue = Float(objectObservation.confidence)
                 identifyLabel.text = String(objectObservation.identifier)
                 confidenceLabel.text = String(objectObservation.confidence)
             }
@@ -159,10 +172,21 @@ class CoreMLTestViewController: UIViewController, ARSCNViewDelegate {
             }
             //信頼度が一番高いオブジェクト
             let topLabelObservation = objectObservation.labels[0]
-            print(topLabelObservation.identifier) //オブジェクト名
-            print(topLabelObservation.confidence) //信頼度
-            identifyLabel.text = String(topLabelObservation.identifier)
-            confidenceLabel.text = String(topLabelObservation.confidence)
+            print("+++")
+            objectObservation.labels.forEach{
+                if(String($0.identifier) != "bottle"){ return }
+                if ($0.confidence<0.5){
+                    confidenceLabel.text = String("not detect bottle")
+                    detect = false
+                }
+                else{
+                    detec = true
+                }
+            }
+//            print(topLabelObservation.identifier) //オブジェクト名
+//            print(topLabelObservation.confidence) //信頼度
+//            identifyLabel.text = String(topLabelObservation.identifier)
+//            confidenceLabel.text = String(topLabelObservation.confidence)
             
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
